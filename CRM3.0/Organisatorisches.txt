@@ -1,0 +1,192 @@
+﻿```
+================================================================================
+TIPPS FÜR LÄNGERFRISTIGE C#-PROJEKTE
+================================================================================
+
+--------------------------------------------------------------------------------
+1. CODE-ORGANISATION & BEST PRACTICES
+--------------------------------------------------------------------------------
+
+Code-Sprache = Deutsch
+
+Namenskonventionen:
+  • Klassen, Methoden, Properties: PascalCase 
+    Beispiel: CustomerService, GetCustomerById
+  • Variablen, Parameter: camelCase 
+    Beispiel: customerName, isActive
+  • Private Felder: _camelCase 
+    Beispiel: _database, _logger
+
+Kommentare:
+  • Nicht WAS der Code tut (das sieht man)
+  • Sondern WARUM
+  • Komplexe Logik erklären
+  • XML-Dokumentation: /// über Methode drücken
+
+
+--------------------------------------------------------------------------------
+2. DATENBANK VON ANFANG AN RICHTIG
+--------------------------------------------------------------------------------
+
+Entity Framework Core nutzen:
+  • Macht Datenbankarbeit viel einfacher
+  • Code-First: C#-Klassen definieren, EF erstellt Datenbank
+  
+NuGet-Pakete installieren:
+  • Microsoft.EntityFrameworkCore
+  • Microsoft.EntityFrameworkCore.Sqlite (für den Start)
+  • oder .SqlServer
+
+Migrations:
+  • Jede Datenbankänderung als Migration speichern
+  • Package Manager Console: Add-Migration InitialCreate
+  • Änderungen nachvollziehbar und rückgängig machbar
+
+
+--------------------------------------------------------------------------------
+3. MVVM-PATTERN FÜR WPF
+--------------------------------------------------------------------------------
+
+Schema: View (XAML) ←→ ViewModel ←→ Model
+
+  • Model: Datenklassen (Customer, Contact, etc.)
+  • ViewModel: Logik zwischen UI und Daten
+  • View: Nur UI, keine Logik im Code-Behind
+
+Tipp: CommunityToolkit.Mvvm nutzen (spart Boilerplate-Code)
+
+
+--------------------------------------------------------------------------------
+4. GIT-WORKFLOW
+--------------------------------------------------------------------------------
+
+Sinnvolle Commit-Messages:
+  ✓ "Kundenverwaltung: CRUD-Operationen implementiert"
+  ✓ "Bugfix: Null-Reference bei leerem Kundenname behoben"
+  ✗ "Update"
+  ✗ "Fixes"
+
+Branch-Strategie (später):
+  • main: Stabiler, funktionierender Code
+  • develop: Aktuelle Entwicklung
+  • Feature-Branches: feature/customer-management
+
+Häufig committen:
+  • Lieber 5 kleine Commits als 1 riesiger
+  • Jeder Commit = eine logische Einheit
+
+
+--------------------------------------------------------------------------------
+5. FEHLERBEHANDLUNG & LOGGING
+--------------------------------------------------------------------------------
+
+Try-Catch wo sinnvoll:
+  try {
+      // Datenbankoperation
+  }
+  catch (Exception ex) {
+      // Logging
+      // Benutzerfreundliche Fehlermeldung
+  }
+
+Logging-Framework:
+  • Serilog oder NLog installieren
+  • Fehler in Dateien statt nur Konsole
+  • Hilft enorm beim Debuggen
+
+
+--------------------------------------------------------------------------------
+6. TESTING
+--------------------------------------------------------------------------------
+
+Unit-Tests von Anfang an:
+  • Test-Projekt erstellen (xUnit, NUnit oder MSTest)
+  • Business-Logik und Services testen
+  • Macht Refactoring sicherer
+
+Erstellen: Solution → Add → New Project → xUnit Test Project
+
+
+--------------------------------------------------------------------------------
+7. KONFIGURATION AUSLAGERN
+--------------------------------------------------------------------------------
+
+appsettings.json nutzen:
+  • Datenbankverbindungen
+  • API-Keys
+  • Einstellungen
+  • NIEMALS Passwörter ins Git!
+
+User Secrets für sensible Daten:
+  • Rechtsklick Projekt → Manage User Secrets
+  • Wird lokal gespeichert, nicht in Git
+
+
+--------------------------------------------------------------------------------
+8. DEPENDENCY INJECTION
+--------------------------------------------------------------------------------
+
+Statt:
+  var service = new CustomerService();
+
+Besser:
+  public CustomerViewModel(ICustomerService customerService) {
+      _customerService = customerService;
+  }
+
+Macht Code testbar und flexibel
+
+
+--------------------------------------------------------------------------------
+9. REGELMÄSSIGE PAUSEN & REFACTORING
+--------------------------------------------------------------------------------
+
+  • Nicht perfektionistisch sein
+    → Erstmal zum Laufen bringen, dann verbessern
+  
+  • Refactoring einplanen
+    → Alle 2-3 Wochen Code aufräumen
+  
+  • README.md pflegen
+    → Was macht das Projekt? Wie startet man es?
+
+
+--------------------------------------------------------------------------------
+10. MOTIVATION BEWAHREN
+--------------------------------------------------------------------------------
+
+  • Kleine Meilensteine setzen
+    "Diese Woche: Kunde anlegen funktioniert"
+  
+  • Sichtbare Fortschritte
+    UI-Features motivieren mehr als Backend
+  
+  • Nicht alles auf einmal
+    Features nach Priorität abarbeiten
+
+
+--------------------------------------------------------------------------------
+WICHTIGSTER TIPP
+--------------------------------------------------------------------------------
+
+FANG EINFACH AN!
+
+Das perfekte Setup gibt es nicht. Lieber schnell ein funktionierendes 
+Kunden-Formular als wochenlang Architektur planen.
+
+Du kannst IMMER noch refactoren!
+
+
+================================================================================
+NÄCHSTE SCHRITTE
+================================================================================
+
+[ ] Datenbankanbindung einrichten (Entity Framework Core)
+[ ] Erstes einfaches UI-Formular bauen
+[ ] Erste Model-Klasse erstellen (z.B. Customer)
+[ ] MVVM-Pattern implementieren
+[ ] Erste CRUD-Operation (Create/Read/Update/Delete)
+
+================================================================================
+```
+

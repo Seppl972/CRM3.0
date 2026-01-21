@@ -1,0 +1,13 @@
+# CRM ToDo-Liste
+
+## In Arbeit
+- [ ] Kundenverwaltung UI erstellen
+
+## Geplant
+- [ ] Login-System
+- [ ] Kontaktverwaltung
+- [ ] Datenbankverbindung
+
+## Erledigt
+- [x] GitHub-Repo erstellen
+- [x] Projekt aufsetzen

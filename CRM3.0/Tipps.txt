@@ -1,0 +1,10 @@
+﻿# Schmierzettel
+
+## GitHub:
+- Nach jeder Coding-Session:
+
+	Öffne den "Git Changes" Tab (View → Git Changes oder Strg+0, Strg+G)
+	Du siehst alle geänderten Dateien
+	Gib eine aussagekräftige Commit-Message ein (z.B. "Kundenverwaltung hinzugefügt")
+	Klicke auf "Commit All"
+	Klicke auf "Push" um die Änderungen zu GitHub hochzuladen
