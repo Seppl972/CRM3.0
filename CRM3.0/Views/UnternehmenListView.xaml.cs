@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,16 @@ namespace CRM.Views
         public UnternehmenListView()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using (var db = new CrmDbContext())
+            {
+                var unternehmenList = db.Unternehmen.ToList();
+                UnternehmenDataGrid.ItemsSource = unternehmenList;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CRM.Data;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -21,6 +22,16 @@ namespace CRM.Views
         public VersicherterListView()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            using (var db = new CrmDbContext())
+            {
+                var versicherte = db.Versicherte.ToList();
+                VersicherteDataGrid.ItemsSource = versicherte;
+            }
         }
     }
 }

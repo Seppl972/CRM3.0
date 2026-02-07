@@ -20,6 +20,7 @@ namespace CRM
         public MainWindow()
         {
             InitializeComponent();
+            Data.DatabaseInitializer.Initialize(); // -> Fügt Testdaten hinzu
         }
 
     private void UnternehmenButton_Click(object sender, RoutedEventArgs e)
@@ -34,5 +35,7 @@ namespace CRM
             MainContentArea.Content = versicherterView;
         }
     }
+
+
 
 }
