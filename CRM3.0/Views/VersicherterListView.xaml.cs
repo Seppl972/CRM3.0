@@ -1,22 +1,11 @@
 ﻿using CRM.Data;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace CRM.Views
 {
-    /// <summary>
-    /// Interaktionslogik für VersicherterListView.xaml
-    /// </summary>
     public partial class VersicherterListView : UserControl
     {
         public VersicherterListView()
@@ -31,6 +20,39 @@ namespace CRM.Views
             {
                 var versicherte = db.Versicherte.ToList();
                 VersicherteDataGrid.ItemsSource = versicherte;
+            }
+        }
+
+        private void NeuerVersicherterButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Formular anzeigen
+            var formView = new VersicherterFormView();
+
+            // Events abonnieren
+            formView.OnSaved += (s, args) =>
+            {
+                LoadData(); // Liste aktualisieren
+                ZurückZurListe(); // Zurück zur Liste
+            };
+            formView.OnCancelled += (s, args) =>
+            {
+                ZurückZurListe(); // Zurück zur Liste
+            };
+
+            // Hauptbereich wechseln
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainContentArea.Content = formView; 
+            }
+        }
+
+        private void ZurückZurListe()
+        {
+            var mainWindow = Window.GetWindow(this) as MainWindow;
+            if (mainWindow != null)
+            {
+                mainWindow.MainContentArea.Content = new VersicherterListView(); 
             }
         }
     }

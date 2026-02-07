@@ -1,14 +1,17 @@
 # CRM ToDo-Liste
 
 ## In Arbeit
-- [ ] GUI in verschiedene Container unterteilen
-- [ ] Kundenverwaltung UI erstellen
+
 
 ## Geplant
 - [ ] Login-System
 - [ ] Kontaktverwaltung
-- [ ] Datenbankverbindung
+
 
 ## Erledigt
 - [x] GitHub-Repo erstellen
 - [x] Projekt aufsetzen
+- [x] GUI in verschiedene Container unterteilen
+- [x] Kundenverwaltung UI erstellen
+- [x] Datenbankverbindung mit Entity Framework Core
+- [x] Testdaten eingefügt

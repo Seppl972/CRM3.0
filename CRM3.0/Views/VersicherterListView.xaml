@@ -19,7 +19,8 @@
                        Margin="0,0,0,10"/>
             <Button Content="+ Neuer Versicherter" 
                     Width="150" 
-                    HorizontalAlignment="Left"/>
+                    HorizontalAlignment="Left"
+                    Click="NeuerVersicherterButton_Click"/>
         </StackPanel>
 
         <!-- Liste der Versicherten -->

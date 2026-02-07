@@ -14,8 +14,11 @@
                     Orientation="Horizontal" 
                     Background="LightGray" 
                     Height="100">
-            <Button Content="Neu" Width="80" Margin="10"/>
+            <Button Content="Einstellungen" Width="80" Margin="10"/>
             <Button Content="Speichern" Width="80" Margin="10"/>
+            <Button Content="Löschen" Width="80" Margin="10"/>
+            <Button Content="Suchen" Width="80" Margin="10"/>
+            <Button Content="Exportieren" Width="80" Margin="10"/>
         </StackPanel>
 
         <!-- Left: Navigation -->
