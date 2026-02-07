@@ -1,6 +1,7 @@
 # CRM ToDo-Liste
 
 ## In Arbeit
+- [ ] GUI in verschiedene Container unterteilen
 - [ ] Kundenverwaltung UI erstellen
 
 ## Geplant

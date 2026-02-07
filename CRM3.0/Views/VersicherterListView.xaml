@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CRM.Views.VersicherterListView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Überschrift und Button-Bereich -->
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="Versicherte" 
+                       FontSize="24" 
+                       FontWeight="Bold" 
+                       Margin="0,0,0,10"/>
+            <Button Content="+ Neuer Versicherter" 
+                    Width="150" 
+                    HorizontalAlignment="Left"/>
+        </StackPanel>
+
+        <!-- Liste der Versicherten -->
+        <DataGrid Grid.Row="1" 
+                  x:Name="VersicherteDataGrid"
+                  Margin="10"
+                  AutoGenerateColumns="False"
+                  CanUserAddRows="False"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Vorname" Binding="{Binding Vorname}" Width="150"/>
+                <DataGridTextColumn Header="Nachname" Binding="{Binding Nachname}" Width="150"/>
+                <DataGridTextColumn Header="Firma" Binding="{Binding Firma}" Width="*"/>
+                <DataGridTextColumn Header="Ort" Binding="{Binding Ort}" Width="150"/>
+                <DataGridTextColumn Header="Telefon" Binding="{Binding Telefon}" Width="150"/>
+                <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

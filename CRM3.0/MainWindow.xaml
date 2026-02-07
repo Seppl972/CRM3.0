@@ -1,12 +1,44 @@
-﻿<Window x:Class="CRM3._0.MainWindow"
+﻿<Window x:Class="CRM.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:CRM3._0"
+        xmlns:local="clr-namespace:CRM"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="CRM 3.0" 
+        WindowState="Maximized">
 
-    </Grid>
-</Window>
+    <DockPanel>
+        <!-- Top: Toolbar -->
+        <StackPanel DockPanel.Dock="Top" 
+                    Orientation="Horizontal" 
+                    Background="LightGray" 
+                    Height="100">
+            <Button Content="Neu" Width="80" Margin="10"/>
+            <Button Content="Speichern" Width="80" Margin="10"/>
+        </StackPanel>
+
+        <!-- Left: Navigation -->
+        <StackPanel DockPanel.Dock="Left" 
+                    Background="WhiteSmoke" 
+                    Width="200">
+            <Button Content="Unternehmen" 
+                    Height="45" 
+                    Margin="10,5"
+                    Click="UnternehmenButton_Click"/>
+            <Button Content="Versicherter" 
+                    Height="45" 
+                    Margin="10,5"
+                    Click="VersicherterButton_Click"/>
+        </StackPanel>
+
+        <!-- Center: Hauptbereich -->
+        <ContentControl x:Name="MainContentArea" 
+                        Background="White">
+            <TextBlock Text="Hauptbereich" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center"/>
+        </ContentControl>
+        
+    </DockPanel>
+    </Window>
