@@ -1,17 +1,60 @@
-# CRM ToDo-Liste
+﻿CRM ToDo-Liste – Junior-Portfolio-Version
 
-## In Arbeit
-
-
-## Geplant
-- [ ] Login-System
-- [ ] Kontaktverwaltung
-
-
-## Erledigt
+====================
+PHASE 1: GRUNDFUNKTIONEN
+====================
+✅ Erledigt:
 - [x] GitHub-Repo erstellen
-- [x] Projekt aufsetzen
-- [x] GUI in verschiedene Container unterteilen
-- [x] Kundenverwaltung UI erstellen
-- [x] Datenbankverbindung mit Entity Framework Core
-- [x] Testdaten eingef�gt
+- [x] Projekt aufsetzen (WPF + EF Core + SQLite)
+- [x] Navigation & UI-Layout
+- [x] Listen-Ansichten (Unternehmen, Versicherte)
+- [x] Neu-Funktion mit Formularen
+- [x] Datenbankintegration
+
+🔨 In Arbeit:
+- [ ] Bearbeiten-Funktion (CRUD vervollständigen)
+- [ ] Löschen-Funktion mit Bestätigungsdialog
+- [ ] Basis-Validierung (Pflichtfelder, Email-Format)
+
+====================
+PHASE 2: BENUTZERFREUNDLICHKEIT
+====================
+- [ ] Suchfunktion in Listen
+- [ ] Sortierung per Spalten-Klick
+- [ ] Fehlerbehandlung & User-Feedback verbessern
+- [ ] README.md mit Screenshots & Architekturdiagramm
+
+====================
+PHASE 3: ARCHITEKTUR-VERBESSERUNG
+====================
+⭐ Diese Phase zeigt technische Reife:
+- [ ] Repository Pattern implementieren
+- [ ] Service Layer einführen (Trennung Business-Logic / UI)
+- [ ] DTOs statt direkter Entity-Verwendung im UI
+- [ ] Dependency Injection (IServiceProvider)
+- [ ] Exception Handling zentralisieren
+- [ ] Logging hinzufügen (Serilog)
+
+====================
+PHASE 4: ERWEITERTE FEATURES
+====================
+- [ ] Aufgabenverwaltung (ToDos pro Kontakt/Unternehmen)
+- [ ] Dashboard mit Statistiken
+- [ ] Notizen-Funktion pro Eintrag
+- [ ] Verknüpfung Versicherter ↔ Unternehmen (Foreign Key + Dropdown)
+
+====================
+PHASE 5: TESTING & DEPLOYMENT
+====================
+- [ ] Unit Tests für Services (xUnit)
+- [ ] Integration Tests für Repository
+- [ ] Installer/Setup erstellen (optional)
+- [ ] CI/CD mit GitHub Actions (optional, aber beeindruckend!)
+
+====================
+OPTIONAL (Nice-to-have)
+====================
+- [ ] Export (Excel/PDF)
+- [ ] Login-System + Rollen
+- [ ] Dark Mode
+- [ ] Datenbank-Migration zu SQL Server
